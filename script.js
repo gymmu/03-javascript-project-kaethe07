@@ -167,6 +167,26 @@ else if (currentElement === '.'){
      }
     }
 
+    export function aufgabe10(args){
+      const input = args
+
+      if (input.length !== 7) return false
+      if (input[0] !== "#") return false
+
+      for (let i = 1; i < input.length; i++) {
+        const currentElement = input[i]
+        const ascii = currentElement.charCodeAt(0)
+        if (48 <= ascii && ascii <= 57) {
+          //mache nichts; ist eine Zahl
+        } else if (65 <= ascii && ascii <=70) {
+          //mache nichts; ist A-F
+        } else {
+          return false
+        }
+      }
+      return true
+    }
+
     export function aufgabe11(args) {
       const input = args
       let ascii = null
@@ -215,17 +235,50 @@ else if (currentElement === '.'){
 }
 
 export function aufgabe14(args) {
-  const input = args 
-  const result = []
-
-for (let i = 3; i < input.length; i++) {
+  const input = args //Diese Aufgabe soll die Position des dritten 'e' im Text finden
+const result = []
+  let countE = 0
+for (let i = 0; i < input.length; i++) {
   const currentElement = input[i]
   if (currentElement === 'e') {
-    pos = i
-}
-}
-return pos
+    countE++
+    if (countE === 3) {
+      return i
+    }
+  }
  
 }
+return -1
+ 
+}
+
+export function aufgabe15(args) {
+  const input = args
+  const result = []
+  
+  for (let i= 0; i < input.length; i++) {
+    const currentElement = input [i]
+    if (currentElement === ` `){
+      return result.join("")
+  
+  }
+  result.push(currentElement)
+}
+ return result.join(" ")
+}
+
+export function aufgabe19(args) {
+  const input = args //Diese Aufgabe soll jedes Zeichen in der Aufgabe verdoppeln
+  const result = []
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    result.push(currentElement)
+    result.push(currentElement)
+   
+  }
+    return result.join("")
+  }
+
+
 
 
