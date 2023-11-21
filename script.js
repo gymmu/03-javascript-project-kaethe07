@@ -75,6 +75,7 @@ else if (currentElement === '.'){
   return count
 }
 
+
   export function aufgabe05(args) {
     const input = args
     const result = []
@@ -104,36 +105,39 @@ else if (currentElement === '.'){
     return true
   }
 
-
   export function aufgabe06(args) {
-    const input = args
-    const result = []
-  let capitalLetters = 0
+    const input = args;
 
   //Enthaltet keine Grossbuchstaben
   for (let i = 0; i < input.length; i++) {
-    const currentElement = input[i]
-     
-    if (currentElement === ".") {
-      //Macht nichts
-    }else if (currentElement === " "){
-      //Ignoriere Leerschläge
-     
-    }else if (currentElement !== currentElement.toLowerCase()) {
-      capitalLetters++
-    }
-      }
-     
-    if (capitalLetters > 0) {
-      return true
+    const currentElement = input[i] ;
+    const ascii = currentElement.charCodeAt(0)
+
+    if (65 <= ascii && ascii <= 90) {
+      //Prüft, ob es sich um eine Grossbuchstabe handelt
+    } else if (97 <= ascii && ascii <=122) {
+      //Prüft, ob es sich um eine Kleinbuchstabe handelt
+    } else if (currentElement === ' ') {
     }else {
-      return false
-    }
-     
       return true
     }
+  }
+  return false
+}
 
+    export function aufgabe07(args) {
+      const input = args.split (' ');
 
+      for (let i = 0; i < input.length; i++) {
+        const currentWord = input[i].toLowerCase() ; //Konvertiert das aktuelle Wort in Kleinbuchstaben für den Vergleich 
+
+        if (currentWord === 'und') {
+          return true; //Sobald das Wort 'und' gefunden wurde, gib true zurück  
+        }
+      }
+      return false; // Fall das Wort 'und' nicht gefunden wurde, gib false zurück
+    }
+    
     export function aufgabe08(args) {
       const input = args
       const result = []
@@ -176,6 +180,7 @@ else if (currentElement === '.'){
       for (let i = 1; i < input.length; i++) {
         const currentElement = input[i]
         const ascii = currentElement.charCodeAt(0)
+
         if (48 <= ascii && ascii <= 57) {
           //mache nichts; ist eine Zahl
         } else if (65 <= ascii && ascii <=70) {
@@ -266,6 +271,15 @@ export function aufgabe15(args) {
 }
  return result.join(" ")
 }
+
+export function aufgabe18(args) {
+  
+
+
+
+}
+  
+
 
 export function aufgabe19(args) {
   const input = args //Diese Aufgabe soll jedes Zeichen in der Aufgabe verdoppeln
