@@ -254,7 +254,6 @@ for (let i = 0; i < input.length; i++) {
  
 }
 return -1
- 
 }
 
 export function aufgabe15(args) {
@@ -262,28 +261,19 @@ export function aufgabe15(args) {
   const result = []
   
   for (let i= 0; i < input.length; i++) {
-    const currentElement = input [i]
-    if (currentElement === ` `){
-      return result.join("")
-  
+    const currentElement = input [i];
+    if (currentElement === ' '){
+      break;
   }
-  result.push(currentElement)
+  result.push(currentElement);
 }
- return result.join(" ")
+ return result.join('')
 }
-
-export function aufgabe18(args) {
-  
-
-
-
-}
-  
-
 
 export function aufgabe19(args) {
   const input = args //Diese Aufgabe soll jedes Zeichen in der Aufgabe verdoppeln
   const result = []
+
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
     result.push(currentElement)
@@ -292,6 +282,53 @@ export function aufgabe19(args) {
   }
     return result.join("")
   }
+
+  export function aufgabe20 (args) {
+    const input = args
+    const result = []
+   
+    for (let i = 0; i < input.length; i++) {
+      const currentElement = input[i]
+   //wenn eine Stelle nach dem "." ein Leerschlag kommt, wird true angezeigtS
+    if (currentElement === '.' )  
+    if (input [i+1] === ' ') {
+      return true
+    }
+     
+    }
+   
+  return false
+   
+  } 
+
+export function aufgabe21(args) {
+  const input = args
+  const result = []
+
+  for (let i = 0; i < input.length; i++) {
+
+  }
+
+
+}
+
+export function aufgabe27(args) {
+  const input = args
+  if (input.length === 0) return false
+ 
+ 
+  for (let i = 0; i < input.length; i++) {
+    const currentElement = input[i]
+    const ascii = currentElement.charCodeAt (0)
+    if(48 <= ascii && ascii <= 57) {
+      // mache nichts; ist eine Zahl
+    } else {
+      return false
+    }
+ 
+  }
+  return true
+}
 
 
 
