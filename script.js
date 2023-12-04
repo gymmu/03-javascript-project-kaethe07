@@ -58,7 +58,7 @@ else if (currentElement === 'E'){
 export function aufgabe04(args) {
   const input = args
   const result = []
-  let count = 0
+  let count = 1
 
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i]
@@ -66,7 +66,6 @@ export function aufgabe04(args) {
 if (currentElement === '.'){
   count = count - 1
 }
- 
 // Sollte Zahlen als Wörter zählen
 else if (currentElement === '.'){
   count = count - 1
@@ -270,6 +269,38 @@ export function aufgabe15(args) {
  return result.join('')
 }
 
+export function aufgabe16(args) {
+  const input = args
+  const result = []
+
+  for (let i= 0; i < input.length; i++) {
+    const currentElement = input [i];
+    if (currentElement === '$'){
+      break;
+    }
+    result.push(currentElement);
+}
+return result.join('')
+}
+
+export function aufgabe17(args) {
+  const input = args;
+  const result = input.split(',')
+ 
+ 
+  for (let i = 0; i < result.length - 1; i++) {
+    for (let j = 0; j < result.length - 1 - i; j++) {
+      if (result[j] > result[j + 1]) {
+       
+        [result[j], result[j + 1]] = [result[j + 1], result[j]]
+      }
+    }
+  }
+ 
+  return result.join(',')
+}
+
+
 export function aufgabe19(args) {
   const input = args //Diese Aufgabe soll jedes Zeichen in der Aufgabe verdoppeln
   const result = []
@@ -283,13 +314,13 @@ export function aufgabe19(args) {
     return result.join("")
   }
 
-  export function aufgabe20 (args) {
+  export function aufgabe20(args) {
     const input = args
     const result = []
    
     for (let i = 0; i < input.length; i++) {
       const currentElement = input[i]
-   //wenn eine Stelle nach dem "." ein Leerschlag kommt, wird true angezeigtS
+   //wenn eine Stelle nach dem "." ein Leerschlag kommt, wird true angezeigt
     if (currentElement === '.' )  
     if (input [i+1] === ' ') {
       return true
@@ -301,18 +332,26 @@ export function aufgabe19(args) {
    
   } 
 
-export function aufgabe21(args) {
-  const input = args
-  const result = []
-
-  for (let i = 0; i < input.length; i++) {
-
+  export function aufgabe26 (args) {
+   
+    const list = args.split("")  // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
+    for (let i = 0; i < list.length - 1; i++) {
+      const currentElement = list[i]
+      const nextElement = list[i+1]
+      if ( currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+        // Reihenfolge stimmt nicht, Elemente müssen getauscht werden.
+        const tmp = list[i+1]
+        list[i+1] = list[i]
+        list[i] = tmp
+        i = 0 // starte von vorne wenn etwas vertauscht wurde.
+      }
+    }
+    const result = list.join("")
+    return (result)
+   
   }
-
-
-}
-
-export function aufgabe27(args) {
+   
+ export function aufgabe27(args) {
   const input = args
   if (input.length === 0) return false
  
@@ -330,6 +369,32 @@ export function aufgabe27(args) {
   return true
 }
 
+export function aufgabe28(args) {
+  const input = args
+  const result = 
+
+
+
+}
+
+export function bubbleSort (args) {
+  const list = args.split("") // Erstellen Sie eine Liste, um etwas sortieren/vergleichen zu können
+   for (let i = 0; i < list.length -1; i++) {
+     const currentElement = list[i]
+     const nextElement = list[i+1]
+     //ascii code von den Buchstaben( Die Buchstaben werden in Zahlen umgewandelt um sie nach der Grösse zu vergleichen)
+     if ( currentElement.charCodeAt(0) > nextElement.charCodeAt(0)) {
+       // Reihenfolge stimmt nicht, die Elemente müssen getauscht werden.
+       const tmp = list[i+1]
+       list[i+1] = list[i]
+       list[i] = tmp
+       i = -1// Von vorne starten wenn etwas vertauscht wurde.
+     }
+   }
+   const result = list.join("")
+   return (result)
+ 
+ }
 
 
 
