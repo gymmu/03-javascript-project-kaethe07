@@ -300,6 +300,29 @@ export function aufgabe17(args) {
   return result.join(',')
 }
 
+export function aufgabe18(args) {
+    const text = args
+    let switchFirst = true
+    const listFirst = []
+    const listSecond = []
+     
+    for (let i = 0; i < text.length; i++) {
+      if (text[i] === " ") {
+        switchFirst = false
+      } else {
+        if (switchFirst === true) {
+          listFirst.push(text[i])
+        } else {
+          listSecond.push(text[i])
+        }
+      }
+    }
+    const name = listFirst.join("")
+    const age = listSecond.join("")
+     
+    return "Sie heissen " + name + " und sind " + age + " Jahre alt" //der Text und die Eingabe sollen angezeigt werden
+    }
+
 
 export function aufgabe19(args) {
   const input = args //Diese Aufgabe soll jedes Zeichen in der Aufgabe verdoppeln
@@ -332,7 +355,37 @@ export function aufgabe19(args) {
    
   } 
 
-  export function aufgabe26 (args) {
+  export function aufgabe21(args){
+
+  }
+
+
+
+  export function aufgabe22(args){
+
+
+}
+
+  export function aufgabe24(args){
+    const input = args
+  const result = []
+
+  return true
+
+
+  }
+
+  export function aufgabe25(args){
+    const input = args
+  const result = []
+
+
+  return true
+
+
+  }
+     
+  export function aufgabe26(args) {
    
     const list = args.split("")  // Damit wandeln wir den Text in eine Liste um, das brauchen wir wenn wir Elemente vertauschen möchten.
     for (let i = 0; i < list.length - 1; i++) {
@@ -370,12 +423,11 @@ export function aufgabe19(args) {
 }
 
 export function aufgabe28(args) {
-  const input = args
-  const result = 
 
 
 
 }
+
 
 export function bubbleSort (args) {
   const list = args.split("") // Erstellen Sie eine Liste, um etwas sortieren/vergleichen zu können
