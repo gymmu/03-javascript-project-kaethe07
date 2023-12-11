@@ -107,21 +107,21 @@ else if (currentElement === '.'){
   export function aufgabe06(args) {
     const input = args;
 
-  //Enthaltet keine Grossbuchstaben
+  //Enthaltet keine Sonderzeichen
   for (let i = 0; i < input.length; i++) {
     const currentElement = input[i] ;
     const ascii = currentElement.charCodeAt(0)
 
     if (65 <= ascii && ascii <= 90) {
-      //Prüft, ob es sich um eine Grossbuchstabe handelt
+      //Prüft, ob es sich um eine Sonderzeichen handelt
     } else if (97 <= ascii && ascii <=122) {
-      //Prüft, ob es sich um eine Kleinbuchstabe handelt
+      //Prüft, ob es sich um eine Sonderzeichen handelt
     } else if (currentElement === ' ') {
     }else {
-      return true
+      return true //Sollte Sonderzeichen mitten im Text
     }
   }
-  return false
+  return false //sollte den leeren String nicht als Sonderzeichen erkennen
 }
 
     export function aufgabe07(args) {
@@ -144,10 +144,9 @@ else if (currentElement === '.'){
       for (let i = 0; i < input.length; i++) {
         const currentElement = input[i]
     
-        if (currentElement === 'e') {
+        if (currentElement === 'e') { //Sollte 'e's mit '3' ersetzen
           result.push("3")
-          //Wenn das aktuelle Zeichen ein 'E' ist, wird es mit 3 ersetzt
-        } else if ( currentElement === 'E') {
+        } else if ( currentElement === 'E') { //Sollte 'E's mit '3'ersetzen
           result.push("E")
         }else { 
             result.push(currentElement)
@@ -162,18 +161,18 @@ else if (currentElement === '.'){
       for (let i = 0; i < input.length; i++) {
       len++
       }
-
+      //der eingegebene Text soll 6 Zeichen lang sein
      if (len === 6) {
-      return true
+      return true //ist der genau 6 Zeichen lang, dann wird true zurückgegeben
      } else {
-      return false
+      return false //ist der länger, dann gib false zurück
      }
     }
 
     export function aufgabe10(args){
       const input = args
 
-      if (input.length !== 7) return false
+      if (input.length !== 7) return false //Sollte kein korrekter RGB Hexcode sein
       if (input[0] !== "#") return false
 
       for (let i = 1; i < input.length; i++) {
@@ -185,18 +184,19 @@ else if (currentElement === '.'){
         } else if (65 <= ascii && ascii <=70) {
           //mache nichts; ist A-F
         } else {
-          return false
+          return false //sollte bei anderen Zeichen, false zurückgeben
         }
       }
-      return true
+      return true //wenn die Eigabe ein korrekter RGB Hexcode ist, gib true zurück
     }
+
 
     export function aufgabe11(args) {
       const input = args
       let ascii = null
 
       if (input.length > 1) { //Funktionswächter
-      return null
+      return null // Sollte 'null' zurückgeben, wenn mehr wie ein Zeichen gegeben ist
       }
 
       for (let i = 0; i < input.length; i++) {
@@ -204,28 +204,28 @@ else if (currentElement === '.'){
         ascii = currentElement.charCodeAt(0)
         return ascii
       }
-      return null
+      return null // Sollte 'null' zurückgeben, wenn keine Eingabe gegeben ist
     }
 
     export function aufgabe12(args) {
       const input = args
-      const result = []
+      const result = [] 
 
-    let pos = 0
+    let pos = 0 //solte eine 'e' an der Position 0 finden
 
-    for (let i = 0; i < input.length; i++) {
+    for (let i = 0; i < input.length; i++) { 
       const currentElement = input[i]
       pos = pos + 1
       if (currentElement === 'e') {
-        return i
+        return i 
     }
   }
-    return -1
+    return -1 // gibt -1 zurück, wenn kein 'e' vorkommt
      
   }
 
   export function aufgabe13(args) {
-    const input = args //Dieser Button sucht die letzte Position des ersten e's in einem Text
+    const input = args //Sucht die letzte Position des ersten e's in einem Text
     const result = []
 
   for (let i = 1; i < input.length; i++) {
@@ -234,7 +234,7 @@ else if (currentElement === '.'){
       return i
   }
 }
-  return -1
+  return -1 //Sollte -1, zurückgeben wenn kein 'e' vorkommt
    
 }
 
@@ -355,35 +355,6 @@ export function aufgabe19(args) {
    
   } 
 
-  export function aufgabe21(args){
-
-  }
-
-
-
-  export function aufgabe22(args){
-
-
-}
-
-  export function aufgabe24(args){
-    const input = args
-  const result = []
-
-  return true
-
-
-  }
-
-  export function aufgabe25(args){
-    const input = args
-  const result = []
-
-
-  return true
-
-
-  }
      
   export function aufgabe26(args) {
    
@@ -420,12 +391,6 @@ export function aufgabe19(args) {
  
   }
   return true
-}
-
-export function aufgabe28(args) {
-
-
-
 }
 
 
